@@ -146,6 +146,8 @@ class Events(object):
         elif mode is None and not params and base_url != 'plugin://plugin.video.jellyfin/':
             # Used when selecting "Browse" from a context menu, see #548
             item_id = base_url.strip('/').split('/')[-1]
+            # TODO Greg check this
+            LOG.debug("item_id computed is [%s], base_url is [%s]", item_id, base_url)
             browse('', item_id, None, server, api_client)
         else:
             listing()
